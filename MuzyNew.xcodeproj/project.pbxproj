@@ -14,6 +14,10 @@
 		F1DF073126B0672300836BA9 /* MuzyNew.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1DF072F26B0672300836BA9 /* MuzyNew.xcdatamodeld */; };
 		F1DF073326B0672400836BA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1DF073226B0672400836BA9 /* Assets.xcassets */; };
 		F1DF073626B0672400836BA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1DF073426B0672400836BA9 /* LaunchScreen.storyboard */; };
+		F1DF074126B074A100836BA9 /* RecordingListScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1DF074026B074A100836BA9 /* RecordingListScreen.storyboard */; };
+		F1DF074326B074B700836BA9 /* AudioViewer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1DF074226B074B700836BA9 /* AudioViewer.storyboard */; };
+		F1DF074526B074DE00836BA9 /* RecordingListScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF074426B074DE00836BA9 /* RecordingListScreenViewController.swift */; };
+		F1DF074726B0750600836BA9 /* AudioViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF074626B0750600836BA9 /* AudioViewerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		F1DF073226B0672400836BA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1DF073526B0672400836BA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1DF073726B0672400836BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1DF074026B074A100836BA9 /* RecordingListScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecordingListScreen.storyboard; sourceTree = "<group>"; };
+		F1DF074226B074B700836BA9 /* AudioViewer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AudioViewer.storyboard; sourceTree = "<group>"; };
+		F1DF074426B074DE00836BA9 /* RecordingListScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingListScreenViewController.swift; sourceTree = "<group>"; };
+		F1DF074626B0750600836BA9 /* AudioViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +66,44 @@
 		F1DF072526B0672300836BA9 /* MuzyNew */ = {
 			isa = PBXGroup;
 			children = (
-				F1DF072626B0672300836BA9 /* AppDelegate.swift */,
-				F1DF072826B0672300836BA9 /* SceneDelegate.swift */,
-				F1DF072A26B0672300836BA9 /* ViewController.swift */,
-				F1DF072C26B0672300836BA9 /* Main.storyboard */,
-				F1DF073226B0672400836BA9 /* Assets.xcassets */,
-				F1DF073426B0672400836BA9 /* LaunchScreen.storyboard */,
-				F1DF073726B0672400836BA9 /* Info.plist */,
-				F1DF072F26B0672300836BA9 /* MuzyNew.xcdatamodeld */,
+				F1DF073E26B0674400836BA9 /* View */,
+				F1DF073D26B0673000836BA9 /* Controller */,
+				F1DF073F26B0676200836BA9 /* Others */,
 			);
 			path = MuzyNew;
+			sourceTree = "<group>";
+		};
+		F1DF073D26B0673000836BA9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F1DF072A26B0672300836BA9 /* ViewController.swift */,
+				F1DF072826B0672300836BA9 /* SceneDelegate.swift */,
+				F1DF072626B0672300836BA9 /* AppDelegate.swift */,
+				F1DF074426B074DE00836BA9 /* RecordingListScreenViewController.swift */,
+				F1DF074626B0750600836BA9 /* AudioViewerViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F1DF073E26B0674400836BA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F1DF072C26B0672300836BA9 /* Main.storyboard */,
+				F1DF073426B0672400836BA9 /* LaunchScreen.storyboard */,
+				F1DF074026B074A100836BA9 /* RecordingListScreen.storyboard */,
+				F1DF074226B074B700836BA9 /* AudioViewer.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F1DF073F26B0676200836BA9 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				F1DF072F26B0672300836BA9 /* MuzyNew.xcdatamodeld */,
+				F1DF073726B0672400836BA9 /* Info.plist */,
+				F1DF073226B0672400836BA9 /* Assets.xcassets */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,7 +165,9 @@
 			files = (
 				F1DF073626B0672400836BA9 /* LaunchScreen.storyboard in Resources */,
 				F1DF073326B0672400836BA9 /* Assets.xcassets in Resources */,
+				F1DF074126B074A100836BA9 /* RecordingListScreen.storyboard in Resources */,
 				F1DF072E26B0672300836BA9 /* Main.storyboard in Resources */,
+				F1DF074326B074B700836BA9 /* AudioViewer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,9 +179,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1DF072B26B0672300836BA9 /* ViewController.swift in Sources */,
+				F1DF074526B074DE00836BA9 /* RecordingListScreenViewController.swift in Sources */,
 				F1DF072726B0672300836BA9 /* AppDelegate.swift in Sources */,
 				F1DF072926B0672300836BA9 /* SceneDelegate.swift in Sources */,
 				F1DF073126B0672300836BA9 /* MuzyNew.xcdatamodeld in Sources */,
+				F1DF074726B0750600836BA9 /* AudioViewerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
