@@ -1,32 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Audio Viewer View Controller-->
+        <!--Your Recording-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="AudioViewerViewController" customModule="MuzyNew" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AudioViewerViewController" title="Your Recording" id="Y6W-OH-hqX" customClass="AudioViewerViewController" customModule="MuzyNew" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fnC-WC-irK">
+                                <rect key="frame" x="88" y="114" width="214" height="32"/>
+                                <segments>
+                                    <segment title="Your Voice"/>
+                                    <segment title="MIDI"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didSelected:" destination="Y6W-OH-hqX" eventType="valueChanged" id="aNb-nq-eak"/>
+                                </connections>
+                            </segmentedControl>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRu-Y9-p18">
+                                <rect key="frame" x="0.0" y="88" width="390" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLh-0V-ARm">
+                                <rect key="frame" x="0.0" y="682" width="390" height="162"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vym-mW-vs0">
+                                        <rect key="frame" x="162" y="59" width="67" height="67"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <imageReference key="image" image="play.fill" catalog="system" symbolScale="large" renderingMode="original"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="whenTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Q0E-XN-9g2"/>
+                                        </connections>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TF0-qG-brs">
+                                        <rect key="frame" x="17" y="13" width="356" height="31"/>
+                                        <color key="minimumTrackTintColor" red="0.24027240280000001" green="0.29683423040000001" blue="0.35294908289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="maximumTrackTintColor" red="0.80784857269999999" green="0.80783325429999997" blue="0.80784368520000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="thumbTintColor" red="0.24027240280000001" green="0.29683423040000001" blue="0.35294908289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="recordBar:" destination="Y6W-OH-hqX" eventType="valueChanged" id="vAQ-tG-fxs"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5x-3F-cxQ">
+                                        <rect key="frame" x="19" y="46" width="45" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0P-q0-LqJ">
+                                        <rect key="frame" x="326" y="46" width="45" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstItem="d5x-3F-cxQ" firstAttribute="top" secondItem="TF0-qG-brs" secondAttribute="bottom" constant="3" id="1zi-7p-pB1"/>
+                                    <constraint firstAttribute="trailing" secondItem="u0P-q0-LqJ" secondAttribute="trailing" constant="19" id="78e-f6-2hs"/>
+                                    <constraint firstItem="TF0-qG-brs" firstAttribute="top" secondItem="SLh-0V-ARm" secondAttribute="top" constant="13" id="d41-VZ-Ikm"/>
+                                    <constraint firstItem="d5x-3F-cxQ" firstAttribute="leading" secondItem="SLh-0V-ARm" secondAttribute="leading" constant="19" id="h5m-dC-20d"/>
+                                    <constraint firstItem="u0P-q0-LqJ" firstAttribute="top" secondItem="TF0-qG-brs" secondAttribute="bottom" constant="3" id="hA1-3n-2xi"/>
+                                    <constraint firstItem="TF0-qG-brs" firstAttribute="leading" secondItem="SLh-0V-ARm" secondAttribute="leading" constant="19" id="lRM-kt-gXp"/>
+                                    <constraint firstAttribute="trailing" secondItem="TF0-qG-brs" secondAttribute="trailing" constant="19" id="nf2-TE-id4"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Voice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAC-xa-3V8">
+                                <rect key="frame" x="116" y="375" width="158" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SLh-0V-ARm" firstAttribute="top" secondItem="fnC-WC-irK" secondAttribute="bottom" constant="537" id="Ubn-Sx-dYD"/>
+                            <constraint firstItem="SLh-0V-ARm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bJ5-Xs-d8t"/>
+                            <constraint firstAttribute="bottom" secondItem="SLh-0V-ARm" secondAttribute="bottom" id="cSw-wa-cvS"/>
+                            <constraint firstItem="SLh-0V-ARm" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="cjY-GB-0OF"/>
+                            <constraint firstItem="fnC-WC-irK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="88" id="hAb-uC-sVM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fnC-WC-irK" secondAttribute="trailing" constant="88" id="kmr-7k-z4P"/>
+                            <constraint firstItem="fnC-WC-irK" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="26" id="wVC-o9-Y0z"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Your Recording" id="gSV-Eq-7aL"/>
+                    <connections>
+                        <outlet property="cardView" destination="SLh-0V-ARm" id="Ktd-OA-3bd"/>
+                        <outlet property="endTimeLabel" destination="u0P-q0-LqJ" id="0hE-FD-OB4"/>
+                        <outlet property="playButton" destination="Vym-mW-vs0" id="8PZ-IH-Msw"/>
+                        <outlet property="sliderBar" destination="TF0-qG-brs" id="IKB-AK-Z94"/>
+                        <outlet property="startTimeLabel" destination="d5x-3F-cxQ" id="G3m-eK-Gtt"/>
+                        <outlet property="textLabel" destination="MAC-xa-3V8" id="rua-5r-V3Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="131"/>
+            <point key="canvasLocation" x="1956.9230769230769" y="130.09478672985782"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="56r-RK-bwl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LQ9-b2-ldu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="COv-YZ-6Ly">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="FcS-F7-gBA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ile-7i-osg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="130.58035714285714"/>
         </scene>
     </scenes>
     <resources>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CBCBF7026B2D6EF008AE9E4 /* Test1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4CBCBF6F26B2D6EF008AE9E4 /* Test1.mp3 */; };
 		F1DF072726B0672300836BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF072626B0672300836BA9 /* AppDelegate.swift */; };
 		F1DF072926B0672300836BA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF072826B0672300836BA9 /* SceneDelegate.swift */; };
 		F1DF072B26B0672300836BA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF072A26B0672300836BA9 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CBCBF6F26B2D6EF008AE9E4 /* Test1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Test1.mp3; path = ../../../Test1.mp3; sourceTree = "<group>"; };
 		F1DF072326B0672300836BA9 /* MuzyNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuzyNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DF072626B0672300836BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1DF072826B0672300836BA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CBCBF6D26B2D2F1008AE9E4 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				4CBCBF6F26B2D6EF008AE9E4 /* Test1.mp3 */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		F1DF071A26B0672300836BA9 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		F1DF072526B0672300836BA9 /* MuzyNew */ = {
 			isa = PBXGroup;
 			children = (
+				4CBCBF6D26B2D2F1008AE9E4 /* Music */,
 				F1DF073E26B0674400836BA9 /* View */,
 				F1DF073D26B0673000836BA9 /* Controller */,
 				F1DF073F26B0676200836BA9 /* Others */,
@@ -163,6 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CBCBF7026B2D6EF008AE9E4 /* Test1.mp3 in Resources */,
 				F1DF073626B0672400836BA9 /* LaunchScreen.storyboard in Resources */,
 				F1DF073326B0672400836BA9 /* Assets.xcassets in Resources */,
 				F1DF074126B074A100836BA9 /* RecordingListScreen.storyboard in Resources */,
@@ -332,7 +344,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79M75RZH5X;
-				INFOPLIST_FILE = MuzyNew/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MuzyNew/Others/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,7 +363,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79M75RZH5X;
-				INFOPLIST_FILE = MuzyNew/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MuzyNew/Others/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
