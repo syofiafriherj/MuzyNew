@@ -21,6 +21,8 @@ class AudioViewerViewController: UIViewController {
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet var saveButton: UIBarButtonItem!
+    
     
     
     
@@ -59,8 +61,26 @@ class AudioViewerViewController: UIViewController {
         super.viewDidLoad()
         loadingPage()
         whenPlayButton()
-
+        saveMenu()
     }
+    
+    func saveMenu(){
+        //1. Bikin UIMenu
+        let saveMenu = UIMenu(title: "", children: [UIAction(title: "Save MIDI as .mp3", image: UIImage(systemName: "doc")) { action in },
+                                                    UIAction(title: "Save MIDI as .wav", image: UIImage(systemName: "doc")) { action in },
+                                                    UIAction(title: "Save Score Notes as .pdf", image: UIImage(systemName: "doc")) { action in },
+                                                    ])
+        
+        //2. Bikin Barbutton
+        let addButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.down"), menu: saveMenu)
+        navigationController?.navigationBar.tintColor = .black
+        
+        navigationItem.setRightBarButton(addButton, animated: true)
+        
+    }
+ 
+    
+    
     
     private var timer:Timer?
     
