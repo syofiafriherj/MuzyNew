@@ -19,10 +19,14 @@
 		F1DF074326B074B700836BA9 /* AudioViewer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1DF074226B074B700836BA9 /* AudioViewer.storyboard */; };
 		F1DF074526B074DE00836BA9 /* RecordingListScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF074426B074DE00836BA9 /* RecordingListScreenViewController.swift */; };
 		F1DF074726B0750600836BA9 /* AudioViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF074626B0750600836BA9 /* AudioViewerViewController.swift */; };
+		F34CDFAA26B829BB008B056A /* ifTappedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34CDFA826B829BB008B056A /* ifTappedButton.swift */; };
+		F34CDFAB26B829BB008B056A /* ifTappedButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F34CDFA926B829BB008B056A /* ifTappedButton.xib */; };
+		F34CDFAE26B82A4F008B056A /* defaultRecordingListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34CDFAC26B82A4F008B056A /* defaultRecordingListScreen.swift */; };
+		F34CDFAF26B82A4F008B056A /* defaultRecordingListScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F34CDFAD26B82A4F008B056A /* defaultRecordingListScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4CBCBF6F26B2D6EF008AE9E4 /* Test1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Test1.mp3; path = ../../../Test1.mp3; sourceTree = "<group>"; };
+		4CBCBF6F26B2D6EF008AE9E4 /* Test1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Test1.mp3; sourceTree = "<group>"; };
 		F1DF072326B0672300836BA9 /* MuzyNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuzyNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DF072626B0672300836BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1DF072826B0672300836BA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +40,10 @@
 		F1DF074226B074B700836BA9 /* AudioViewer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AudioViewer.storyboard; sourceTree = "<group>"; };
 		F1DF074426B074DE00836BA9 /* RecordingListScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingListScreenViewController.swift; sourceTree = "<group>"; };
 		F1DF074626B0750600836BA9 /* AudioViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewerViewController.swift; sourceTree = "<group>"; };
+		F34CDFA826B829BB008B056A /* ifTappedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ifTappedButton.swift; sourceTree = "<group>"; };
+		F34CDFA926B829BB008B056A /* ifTappedButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ifTappedButton.xib; sourceTree = "<group>"; };
+		F34CDFAC26B82A4F008B056A /* defaultRecordingListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaultRecordingListScreen.swift; sourceTree = "<group>"; };
+		F34CDFAD26B82A4F008B056A /* defaultRecordingListScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = defaultRecordingListScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,14 +57,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4CBCBF6D26B2D2F1008AE9E4 /* Music */ = {
-			isa = PBXGroup;
-			children = (
-				4CBCBF6F26B2D6EF008AE9E4 /* Test1.mp3 */,
-			);
-			path = Music;
-			sourceTree = "<group>";
-		};
 		F1DF071A26B0672300836BA9 = {
 			isa = PBXGroup;
 			children = (
@@ -76,9 +76,10 @@
 		F1DF072526B0672300836BA9 /* MuzyNew */ = {
 			isa = PBXGroup;
 			children = (
-				4CBCBF6D26B2D2F1008AE9E4 /* Music */,
+				4CBCBF6F26B2D6EF008AE9E4 /* Test1.mp3 */,
 				F1DF073E26B0674400836BA9 /* View */,
 				F1DF073D26B0673000836BA9 /* Controller */,
+				F32473EA26B7E100002D71D3 /* Cell */,
 				F1DF073F26B0676200836BA9 /* Others */,
 			);
 			path = MuzyNew;
@@ -115,6 +116,17 @@
 				F1DF073226B0672400836BA9 /* Assets.xcassets */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		F32473EA26B7E100002D71D3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F34CDFA826B829BB008B056A /* ifTappedButton.swift */,
+				F34CDFA926B829BB008B056A /* ifTappedButton.xib */,
+				F34CDFAC26B82A4F008B056A /* defaultRecordingListScreen.swift */,
+				F34CDFAD26B82A4F008B056A /* defaultRecordingListScreen.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,9 +187,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CBCBF7026B2D6EF008AE9E4 /* Test1.mp3 in Resources */,
+				F34CDFAB26B829BB008B056A /* ifTappedButton.xib in Resources */,
 				F1DF073626B0672400836BA9 /* LaunchScreen.storyboard in Resources */,
 				F1DF073326B0672400836BA9 /* Assets.xcassets in Resources */,
 				F1DF074126B074A100836BA9 /* RecordingListScreen.storyboard in Resources */,
+				F34CDFAF26B82A4F008B056A /* defaultRecordingListScreen.xib in Resources */,
 				F1DF072E26B0672300836BA9 /* Main.storyboard in Resources */,
 				F1DF074326B074B700836BA9 /* AudioViewer.storyboard in Resources */,
 			);
@@ -190,7 +204,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F34CDFAA26B829BB008B056A /* ifTappedButton.swift in Sources */,
 				F1DF072B26B0672300836BA9 /* ViewController.swift in Sources */,
+				F34CDFAE26B82A4F008B056A /* defaultRecordingListScreen.swift in Sources */,
 				F1DF074526B074DE00836BA9 /* RecordingListScreenViewController.swift in Sources */,
 				F1DF072726B0672300836BA9 /* AppDelegate.swift in Sources */,
 				F1DF072926B0672300836BA9 /* SceneDelegate.swift in Sources */,
