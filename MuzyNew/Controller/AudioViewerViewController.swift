@@ -31,7 +31,7 @@ class AudioViewerViewController: UIViewController {
         if isActive {
             isActive = false
             let largeConfig = UIImage.SymbolConfiguration(scale: .large)
-            let image = UIImage(systemName: "play.fill", withConfiguration: largeConfig)?.withRenderingMode(.alwaysOriginal)
+            let image = UIImage(systemName: "play.fill", withConfiguration: largeConfig)?.withRenderingMode(.automatic)
             playButton.setImage(image, for: .normal)
             audioPlayer.stop()
             
@@ -39,7 +39,7 @@ class AudioViewerViewController: UIViewController {
         } else {
             isActive = true
             let largeConfig = UIImage.SymbolConfiguration(scale: .large)
-            let image = UIImage(systemName: "pause.fill", withConfiguration: largeConfig)?.withRenderingMode(.alwaysOriginal)
+            let image = UIImage(systemName: "pause.fill", withConfiguration: largeConfig)?.withRenderingMode(.automatic)
             playButton.setImage(image, for: .normal)
             let sound = Bundle.main.path(forResource: "Test1", ofType: "mp3")
            
@@ -55,14 +55,25 @@ class AudioViewerViewController: UIViewController {
             sliderBar.maximumValue = Float(audioPlayer.duration)
             audioPlayer.play()
         }
+        
     }
     
+    @IBOutlet var navbarTitle: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingPage()
         whenPlayButton()
         saveMenu()
+    
+      
+        
+        self.navigationController?.navigationBar.titleTextAttributes =
+                    [NSAttributedString.Key.font: UIFont(name: "New York Extra Large", size: 18),
+                     NSAttributedString.Key.foregroundColor: UIColor.init(displayP3Red: 0.224, green: 0.298, blue: 0.357, alpha: 1)]
+        
     }
+    
+    
     
     func saveMenu(){
         //1. Bikin UIMenu
@@ -72,10 +83,16 @@ class AudioViewerViewController: UIViewController {
                                                     ])
         
         //2. Bikin Barbutton
-        let addButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.down"), menu: saveMenu)
-        navigationController?.navigationBar.tintColor = .black
+        let addButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.down"), menu :saveMenu)
+//        navigationController?.navigationBar.tintColor = .black
+        if(overrideUserInterfaceStyle == .light){
+            navigationItem.setRightBarButton(addButton, animated: true)
+            navigationItem.rightBarButtonItem?.tintColor = UIColor(displayP3Red: 0.224, green: 0.298, blue: 0.357, alpha: 0)
+        } else {
+            navigationItem.setRightBarButton(addButton, animated: true)
+            navigationItem.rightBarButtonItem?.tintColor = UIColor(displayP3Red: 0.961, green: 0.957, blue: 0.937, alpha: 1)
+        }
         
-        navigationItem.setRightBarButton(addButton, animated: true)
         
     }
  
@@ -136,9 +153,9 @@ class AudioViewerViewController: UIViewController {
     
 //tampilan awal
     private func loadingPage(){
-        playButton.backgroundColor = .white
-        cardView.backgroundColor = .white
-        cardView.layer.backgroundColor = UIColor(red: 0.192, green: 0.263, blue: 0.318, alpha: 0.9).cgColor
+//        playButton.backgroundColor = .white
+//        cardView.backgroundColor = .white
+//        cardView.layer.backgroundColor = UIColor(red: 0.192, green: 0.263, blue: 0.318, alpha: 0.9).cgColor
         cardView.layer.cornerRadius = 26
     }
 
@@ -154,16 +171,13 @@ class AudioViewerViewController: UIViewController {
     @IBAction func didSelected(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             segmentedIndex = 0
-            textLabel.text = "Your Voice"
-            textLabel.textAlignment = .center
+            
         } else if sender.selectedSegmentIndex == 1 {
             segmentedIndex = 1
-            textLabel.text = "MIDI"
-            textLabel.textAlignment = .center
+            
             
         }
         
     }
     
-
 }
