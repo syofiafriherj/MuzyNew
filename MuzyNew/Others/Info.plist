@@ -40,7 +40,9 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>AudioViewer</string>
+					<string>RecordingListScreen</string>
+					<key>UISceneClassName</key>
+					<string></string>
 				</dict>
 			</array>
 		</dict>

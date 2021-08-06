@@ -27,24 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4C9AD4CC26BD30710019ACD5 /* SF-Pro-Display-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-BlackItalic.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-BlackItalic.otf"; sourceTree = "<group>"; };
-		4C9AD4CD26BD30710019ACD5 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Regular.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
-		4C9AD4CE26BD30720019ACD5 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
-		4C9AD4CF26BD30720019ACD5 /* SF-Pro-Display-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-BoldItalic.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-BoldItalic.otf"; sourceTree = "<group>"; };
-		4C9AD4D026BD30720019ACD5 /* SF-Pro-Display-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-RegularItalic.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-RegularItalic.otf"; sourceTree = "<group>"; };
-		4C9AD4D126BD30720019ACD5 /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Black.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
-		4C9AD4D226BD30720019ACD5 /* SF-Pro-Display-UltralightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-UltralightItalic.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-UltralightItalic.otf"; sourceTree = "<group>"; };
-		4C9AD4D326BD30720019ACD5 /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-SemiboldItalic.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
-		4C9AD4D426BD30720019ACD5 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Medium.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
-		4C9AD4D526BD30720019ACD5 /* SF-Pro-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Ultralight.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-Ultralight.otf"; sourceTree = "<group>"; };
-		4C9AD4D626BD30720019ACD5 /* SF-Pro-Display-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-HeavyItalic.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-HeavyItalic.otf"; sourceTree = "<group>"; };
-		4C9AD4D726BD30720019ACD5 /* SF-Pro-Display-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-MediumItalic.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-MediumItalic.otf"; sourceTree = "<group>"; };
-		4C9AD4D826BD30720019ACD5 /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Thin.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
-		4C9AD4D926BD30720019ACD5 /* SF-Pro-Display-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-ThinItalic.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-ThinItalic.otf"; sourceTree = "<group>"; };
-		4C9AD4DA26BD30720019ACD5 /* SF-Pro-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Heavy.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-Heavy.otf"; sourceTree = "<group>"; };
-		4C9AD4DB26BD30720019ACD5 /* SF-Pro-Display-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-LightItalic.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-LightItalic.otf"; sourceTree = "<group>"; };
-		4C9AD4DC26BD30720019ACD5 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
-		4C9AD4DD26BD30720019ACD5 /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Light.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
 		4CBCBF6F26B2D6EF008AE9E4 /* Test1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Test1.mp3; sourceTree = "<group>"; };
 		F1DF072326B0672300836BA9 /* MuzyNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuzyNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DF072626B0672300836BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +57,24 @@
 		F3BECB8026BD1010009A30B2 /* NewYorkExtraLarge-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkExtraLarge-BlackItalic.otf"; sourceTree = "<group>"; };
 		F3BECB8126BD1010009A30B2 /* NewYorkExtraLarge-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkExtraLarge-HeavyItalic.otf"; sourceTree = "<group>"; };
 		F3BECB8226BD1010009A30B2 /* NewYorkExtraLarge-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkExtraLarge-Black.otf"; sourceTree = "<group>"; };
+		F3FACA2626BD9806009CD792 /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Light.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
+		F3FACA2726BD9806009CD792 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Medium.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
+		F3FACA2826BD9806009CD792 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
+		F3FACA2926BD9806009CD792 /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Thin.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
+		F3FACA2A26BD9806009CD792 /* SF-Pro-Display-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-BoldItalic.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-BoldItalic.otf"; sourceTree = "<group>"; };
+		F3FACA2B26BD9806009CD792 /* SF-Pro-Display-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-HeavyItalic.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-HeavyItalic.otf"; sourceTree = "<group>"; };
+		F3FACA2C26BD9806009CD792 /* SF-Pro-Display-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-LightItalic.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-LightItalic.otf"; sourceTree = "<group>"; };
+		F3FACA2D26BD9806009CD792 /* SF-Pro-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Heavy.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-Heavy.otf"; sourceTree = "<group>"; };
+		F3FACA2E26BD9806009CD792 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		F3FACA2F26BD9806009CD792 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Regular.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		F3FACA3026BD9806009CD792 /* SF-Pro-Display-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-ThinItalic.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-ThinItalic.otf"; sourceTree = "<group>"; };
+		F3FACA3126BD9806009CD792 /* SF-Pro-Display-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-RegularItalic.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-RegularItalic.otf"; sourceTree = "<group>"; };
+		F3FACA3226BD9806009CD792 /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-SemiboldItalic.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		F3FACA3326BD9806009CD792 /* SF-Pro-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Ultralight.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-Ultralight.otf"; sourceTree = "<group>"; };
+		F3FACA3426BD9806009CD792 /* SF-Pro-Display-UltralightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-UltralightItalic.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-UltralightItalic.otf"; sourceTree = "<group>"; };
+		F3FACA3526BD9806009CD792 /* SF-Pro-Display-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-MediumItalic.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-MediumItalic.otf"; sourceTree = "<group>"; };
+		F3FACA3626BD9806009CD792 /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Black.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
+		F3FACA3726BD9806009CD792 /* SF-Pro-Display-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-BlackItalic.otf"; path = "../../../../../../../Library/Fonts/SF-Pro-Display-BlackItalic.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,24 +176,24 @@
 				F3BECB7826BD100F009A30B2 /* NewYorkExtraLarge-RegularItalic.otf */,
 				F3BECB7926BD100F009A30B2 /* NewYorkExtraLarge-Semibold.otf */,
 				F3BECB7A26BD100F009A30B2 /* NewYorkExtraLarge-SemiboldItalic.otf */,
-				4C9AD4D126BD30720019ACD5 /* SF-Pro-Display-Black.otf */,
-				4C9AD4CC26BD30710019ACD5 /* SF-Pro-Display-BlackItalic.otf */,
-				4C9AD4CE26BD30720019ACD5 /* SF-Pro-Display-Bold.otf */,
-				4C9AD4CF26BD30720019ACD5 /* SF-Pro-Display-BoldItalic.otf */,
-				4C9AD4DA26BD30720019ACD5 /* SF-Pro-Display-Heavy.otf */,
-				4C9AD4D626BD30720019ACD5 /* SF-Pro-Display-HeavyItalic.otf */,
-				4C9AD4DD26BD30720019ACD5 /* SF-Pro-Display-Light.otf */,
-				4C9AD4DB26BD30720019ACD5 /* SF-Pro-Display-LightItalic.otf */,
-				4C9AD4D426BD30720019ACD5 /* SF-Pro-Display-Medium.otf */,
-				4C9AD4D726BD30720019ACD5 /* SF-Pro-Display-MediumItalic.otf */,
-				4C9AD4CD26BD30710019ACD5 /* SF-Pro-Display-Regular.otf */,
-				4C9AD4D026BD30720019ACD5 /* SF-Pro-Display-RegularItalic.otf */,
-				4C9AD4DC26BD30720019ACD5 /* SF-Pro-Display-Semibold.otf */,
-				4C9AD4D326BD30720019ACD5 /* SF-Pro-Display-SemiboldItalic.otf */,
-				4C9AD4D826BD30720019ACD5 /* SF-Pro-Display-Thin.otf */,
-				4C9AD4D926BD30720019ACD5 /* SF-Pro-Display-ThinItalic.otf */,
-				4C9AD4D526BD30720019ACD5 /* SF-Pro-Display-Ultralight.otf */,
-				4C9AD4D226BD30720019ACD5 /* SF-Pro-Display-UltralightItalic.otf */,
+				F3FACA3626BD9806009CD792 /* SF-Pro-Display-Black.otf */,
+				F3FACA3726BD9806009CD792 /* SF-Pro-Display-BlackItalic.otf */,
+				F3FACA2826BD9806009CD792 /* SF-Pro-Display-Bold.otf */,
+				F3FACA2A26BD9806009CD792 /* SF-Pro-Display-BoldItalic.otf */,
+				F3FACA2D26BD9806009CD792 /* SF-Pro-Display-Heavy.otf */,
+				F3FACA2B26BD9806009CD792 /* SF-Pro-Display-HeavyItalic.otf */,
+				F3FACA2626BD9806009CD792 /* SF-Pro-Display-Light.otf */,
+				F3FACA2C26BD9806009CD792 /* SF-Pro-Display-LightItalic.otf */,
+				F3FACA2726BD9806009CD792 /* SF-Pro-Display-Medium.otf */,
+				F3FACA3526BD9806009CD792 /* SF-Pro-Display-MediumItalic.otf */,
+				F3FACA2F26BD9806009CD792 /* SF-Pro-Display-Regular.otf */,
+				F3FACA3126BD9806009CD792 /* SF-Pro-Display-RegularItalic.otf */,
+				F3FACA2E26BD9806009CD792 /* SF-Pro-Display-Semibold.otf */,
+				F3FACA3226BD9806009CD792 /* SF-Pro-Display-SemiboldItalic.otf */,
+				F3FACA2926BD9806009CD792 /* SF-Pro-Display-Thin.otf */,
+				F3FACA3026BD9806009CD792 /* SF-Pro-Display-ThinItalic.otf */,
+				F3FACA3326BD9806009CD792 /* SF-Pro-Display-Ultralight.otf */,
+				F3FACA3426BD9806009CD792 /* SF-Pro-Display-UltralightItalic.otf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

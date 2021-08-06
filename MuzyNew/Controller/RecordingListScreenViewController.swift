@@ -85,10 +85,10 @@ class RecordingListScreenViewController: UIViewController {
     
     func setupUITable() {
         recordButton.layer.cornerRadius = recordButton.bounds.size.width / 2
-        recordButton.layer.backgroundColor = UIColor(red: 0.224, green: 0.298, blue: 0.357, alpha: 1).cgColor
-     
-        handleViewer.backgroundColor = .white
-        handleViewer.layer.backgroundColor = UIColor(red: 0.224, green: 0.298, blue: 0.357, alpha: 0.9).cgColor
+//        recordButton.layer.backgroundColor = UIColor(named: "PlayPauseButtonColor")
+//
+////        handleViewer.backgroundColor = .white
+//        handleViewer.layer.backgroundColor = UIColor(named: "CardColor")
         handleViewer.layer.cornerRadius = 26
         
         recordingListScreenTableView.contentInset = UIEdgeInsets(top: 20,left: 0,bottom: 20,right: 0)
