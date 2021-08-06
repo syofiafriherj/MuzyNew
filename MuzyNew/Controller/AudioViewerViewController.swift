@@ -64,8 +64,10 @@ class AudioViewerViewController: UIViewController {
         loadingPage()
         whenPlayButton()
         saveMenu()
-    
-      
+        
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "PlayPauseColorButton")], for: .normal)
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "PrimaryColor")], for: .selected)
+        
         
         self.navigationController?.navigationBar.titleTextAttributes =
                     [NSAttributedString.Key.font: UIFont(name: "New York Extra Large", size: 18),
@@ -74,8 +76,8 @@ class AudioViewerViewController: UIViewController {
     }
     
     
-    
     func saveMenu(){
+        print("push")
         //1. Bikin UIMenu
         let saveMenu = UIMenu(title: "", children: [UIAction(title: "Save MIDI as .mp3", image: UIImage(systemName: "doc")) { action in },
                                                     UIAction(title: "Save MIDI as .wav", image: UIImage(systemName: "doc")) { action in },
@@ -85,19 +87,16 @@ class AudioViewerViewController: UIViewController {
         //2. Bikin Barbutton
         let addButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.down"), menu :saveMenu)
 //        navigationController?.navigationBar.tintColor = .black
-        if(overrideUserInterfaceStyle == .light){
-            navigationItem.setRightBarButton(addButton, animated: true)
-            navigationItem.rightBarButtonItem?.tintColor = UIColor(displayP3Red: 0.224, green: 0.298, blue: 0.357, alpha: 0)
-        } else {
+ 
+        navigationItem.setRightBarButton(addButton, animated: true)
+        navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "PlayPauseColorButton")
+      
+        /*
             navigationItem.setRightBarButton(addButton, animated: true)
             navigationItem.rightBarButtonItem?.tintColor = UIColor(displayP3Red: 0.961, green: 0.957, blue: 0.937, alpha: 1)
-        }
-        
-        
+        */
     }
  
-    
-    
     
     private var timer:Timer?
     
@@ -165,6 +164,9 @@ class AudioViewerViewController: UIViewController {
             .cornerRadius = playButton.bounds.size.width / 2
      
     }
+    
+  
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     
 //function segmented ketika di klik

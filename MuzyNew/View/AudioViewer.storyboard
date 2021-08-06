@@ -110,6 +110,7 @@
                         <outlet property="endTimeLabel" destination="u0P-q0-LqJ" id="0hE-FD-OB4"/>
                         <outlet property="navbarTitle" destination="gSV-Eq-7aL" id="wAq-3e-HTd"/>
                         <outlet property="playButton" destination="Vym-mW-vs0" id="8PZ-IH-Msw"/>
+                        <outlet property="segmentedControl" destination="fnC-WC-irK" id="VB3-wW-Qbm"/>
                         <outlet property="sliderBar" destination="TF0-qG-brs" id="IKB-AK-Z94"/>
                         <outlet property="startTimeLabel" destination="d5x-3F-cxQ" id="G3m-eK-Gtt"/>
                     </connections>
