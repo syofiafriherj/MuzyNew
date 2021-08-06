@@ -14,8 +14,21 @@ struct RecordingModel{
     var audio : Data = Data()
 }
 
-class RecordingListScreenViewController: UIViewController {
+enum MicState {
+    case start
+    case stop
+}
 
+class RecordingListScreenViewController: UIViewController {
+    
+    var audioPlayer = AVAudioPlayer()
+    var micSystem:MicState = .stop
+    
+    
+   
+    @IBOutlet weak var navbarView: UIImageView!
+    @IBOutlet weak var handleViewer: UIView!
+    @IBOutlet weak var recordButton: UIButton!
     @IBOutlet var recordingListScreenTableView: UITableView!
     
     var dummyData = [RecordingModel]()
@@ -26,19 +39,76 @@ class RecordingListScreenViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+      
         setupTable()
-        setupDummy()
+        setupUITable()
         recordingListScreenTableView.dataSource = self
         recordingListScreenTableView.delegate = self
+        recordingListScreenTableView.estimatedRowHeight = 120
+        recordingListScreenTableView.rowHeight = UITableView.automaticDimension
+        
     }
     
-    func setupDummy(){
-        dummyData = [
-            RecordingModel(title: "Coba1", duration: 10, audio: Data()),
-            RecordingModel(title: "Coba2", duration: 3, audio: Data()),
-            RecordingModel(title: "Coba3", duration: 4, audio: Data()),
-            RecordingModel(title: "Coba4", duration: 3, audio: Data()),
-        ]
+    @IBAction func buttonStart(_ sender: UIButton) {
+      
+        if micSystem == .start {
+            micSystem = .stop
+          
+            let largeConfig = UIImage.SymbolConfiguration(scale: .large)
+           
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                  self.handleViewer.alpha = 1
+                  self.handleViewer.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.bounds.width, height: -162)
+                  self.handleViewer.layoutIfNeeded()
+            }, completion: nil)
+            
+          addData()
+    
+              
+        } else {
+            micSystem = .start
+          
+            let largeConfig = UIImage.SymbolConfiguration(scale: .large)
+//            let image = UIImage(systemName: "stop.fill", withConfiguration: largeConfig)
+//            recordButton.setImage(image, for: .normal)
+            
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                  self.handleViewer.alpha = 1
+                  self.handleViewer.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.bounds.width, height: -300)
+                  self.handleViewer.layoutIfNeeded()
+            }, completion: nil)
+        }
+        }
+        
+       
+   
+    
+    func setupUITable() {
+        recordButton.layer.cornerRadius = recordButton.bounds.size.width / 2
+        recordButton.layer.backgroundColor = UIColor(red: 0.224, green: 0.298, blue: 0.357, alpha: 1).cgColor
+     
+        handleViewer.backgroundColor = .white
+        handleViewer.layer.backgroundColor = UIColor(red: 0.224, green: 0.298, blue: 0.357, alpha: 0.9).cgColor
+        handleViewer.layer.cornerRadius = 26
+        
+        recordingListScreenTableView.contentInset = UIEdgeInsets(top: 20,left: 0,bottom: 20,right: 0)
+        
+        self.recordingListScreenTableView.rowHeight = 92
+
+    }
+    
+    
+    func addData(){
+//        dummyData = [
+//            RecordingModel(title: "Coba1", duration: 10, audio: Data()),
+//            RecordingModel(title: "Coba2", duration: 3, audio: Data()),
+//            RecordingModel(title: "Coba3", duration: 4, audio: Data()),
+//            RecordingModel(title: "Coba4", duration: 3, audio: Data()),
+//        ]
+        var data =  RecordingModel(title: "Coba1", duration: 10, audio: Data())
+        dummyData.append(data)
+        recordingListScreenTableView.reloadData()
+        
     }
     
     func setupTable(){
@@ -65,9 +135,23 @@ extension RecordingListScreenViewController : UITableViewDataSource{
                 self.recordingListScreenTableView.reloadData()
             }
             
+            let sound = Bundle.main.path(forResource: "Test1", ofType: "mp3")
+            
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+                
+            }
+            catch {
+                print(error)
+            }
+            audioPlayer.play()
+            
             return cell
             
         }else{
+            if indexPlaying == -1 {
+            audioPlayer.stop() }
+            print(indexPlaying)
             //cell default
             let cell = recordingListScreenTableView.dequeueReusableCell(withIdentifier: "custom1") as! DefaultRecordingCell
             
@@ -89,10 +173,10 @@ extension RecordingListScreenViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == self.indexPlaying{
             // tinggi cell pas playing
-            return 81
+            return UITableView.automaticDimension
         }else{
             // tinggi cell default
-            return 44
+            return UITableView.automaticDimension
         }
     }
 }
