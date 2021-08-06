@@ -20,8 +20,8 @@ class AudioViewerViewController: UIViewController {
     @IBOutlet weak var sliderBar: UISlider!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var textLabel: UILabel!
-    @IBOutlet var saveButton: UIBarButtonItem!
+   
+    @IBOutlet var viewScoreNotes: UIView!
     
     
     
@@ -58,6 +58,7 @@ class AudioViewerViewController: UIViewController {
         
     }
     
+    @IBOutlet var scoreNotesView: UIImageView!
     @IBOutlet var navbarTitle: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,10 +69,19 @@ class AudioViewerViewController: UIViewController {
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "PlayPauseColorButton")], for: .normal)
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "PrimaryColor")], for: .selected)
         
+        if(self.traitCollection.userInterfaceStyle == .light){
+            var image : UIImage = UIImage(named: "scoreNotesBlack")!
+            scoreNotesView.image = image
+        } else {
+            var image : UIImage = UIImage(named: "scoreNotesWhite")!
+            scoreNotesView.image = image
+        }
+        
+        
         
         self.navigationController?.navigationBar.titleTextAttributes =
                     [NSAttributedString.Key.font: UIFont(name: "New York Extra Large", size: 18),
-                     NSAttributedString.Key.foregroundColor: UIColor.init(displayP3Red: 0.224, green: 0.298, blue: 0.357, alpha: 1)]
+                     NSAttributedString.Key.foregroundColor: UIColor(named: "PlayPauseColorButton")]
         
     }
     
