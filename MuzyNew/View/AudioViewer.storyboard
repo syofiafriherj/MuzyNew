@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LQ9-b2-ldu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -91,18 +91,24 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="PrimaryColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="SLh-0V-ARm" secondAttribute="bottom" id="JFS-Wj-pq4"/>
                             <constraint firstItem="SLh-0V-ARm" firstAttribute="top" secondItem="fnC-WC-irK" secondAttribute="bottom" constant="537" id="Ubn-Sx-dYD"/>
                             <constraint firstItem="SLh-0V-ARm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bJ5-Xs-d8t"/>
                             <constraint firstAttribute="bottom" secondItem="SLh-0V-ARm" secondAttribute="bottom" id="cSw-wa-cvS"/>
                             <constraint firstItem="SLh-0V-ARm" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="cjY-GB-0OF"/>
+                            <constraint firstItem="SLh-0V-ARm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dLv-ez-Dpx"/>
                             <constraint firstItem="fnC-WC-irK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="88" id="hAb-uC-sVM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fnC-WC-irK" secondAttribute="trailing" constant="88" id="kmr-7k-z4P"/>
+                            <constraint firstItem="SLh-0V-ARm" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="rDm-I2-Yge"/>
                             <constraint firstItem="fnC-WC-irK" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="26" id="wVC-o9-Y0z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Your Recording" id="gSV-Eq-7aL">
                         <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="oGh-mu-nqG">
                             <color key="tintColor" name="PlayPauseColorButton"/>
+                            <connections>
+                                <action selector="backButton:" destination="Y6W-OH-hqX" id="MRr-6f-y9Y"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -118,26 +124,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1956.9230769230769" y="130.09478672985782"/>
+            <point key="canvasLocation" x="3815.3846153846152" y="130.09478672985782"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="56r-RK-bwl">
+        <scene sceneID="wwp-bM-fMr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LQ9-b2-ldu" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xjN-RR-uHZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="var-Xp-RQl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="COv-YZ-6Ly">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n2L-KM-nEU">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="PrimaryColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="FcS-F7-gBA"/>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="SRd-6I-2ec"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ile-7i-osg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="130.58035714285714"/>
+            <point key="canvasLocation" x="2886.1538461538462" y="130.09478672985782"/>
         </scene>
     </scenes>
     <resources>

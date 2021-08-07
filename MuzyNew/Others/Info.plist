@@ -42,7 +42,7 @@
 					<key>UISceneStoryboardFile</key>
 					<string>RecordingListScreen</string>
 					<key>UISceneClassName</key>
-					<string></string>
+					<string>RecordingListScreenViewController</string>
 				</dict>
 			</array>
 		</dict>

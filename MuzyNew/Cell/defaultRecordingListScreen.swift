@@ -25,6 +25,7 @@ class DefaultRecordingCell: UITableViewCell {
 
     var action : ()->()  = {}
     
+    @IBOutlet weak var sampleLabel: UILabel!
     
     @IBAction func previewBtn(_ sender: Any) {
         action()

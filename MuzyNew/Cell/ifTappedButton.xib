@@ -45,7 +45,7 @@
                         <rect key="frame" x="76" y="24" width="152" height="23"/>
                     </slider>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Sample Recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzj-SR-p0V">
-                        <rect key="frame" x="37.999999999999993" y="12" width="99.333333333333314" height="14"/>
+                        <rect key="frame" x="38.000000000000007" y="12" width="96.666666666666686" height="14"/>
                         <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="12"/>
                         <color key="textColor" name="PlayPauseColorButton"/>
                         <nil key="highlightedColor"/>

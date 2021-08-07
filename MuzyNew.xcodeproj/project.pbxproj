@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C68BB3826BE786D00A54C6D /* suaraWakan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C68BB3626BE786D00A54C6D /* suaraWakan.mp3 */; };
+		4C68BB3926BE786D00A54C6D /* pianoSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C68BB3726BE786D00A54C6D /* pianoSound.mp3 */; };
 		4CBCBF7026B2D6EF008AE9E4 /* Test1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4CBCBF6F26B2D6EF008AE9E4 /* Test1.mp3 */; };
 		F1DF072726B0672300836BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF072626B0672300836BA9 /* AppDelegate.swift */; };
 		F1DF072926B0672300836BA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF072826B0672300836BA9 /* SceneDelegate.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C68BB3626BE786D00A54C6D /* suaraWakan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = suaraWakan.mp3; path = "../../../Downloads/sample music/suaraWakan.mp3"; sourceTree = "<group>"; };
+		4C68BB3726BE786D00A54C6D /* pianoSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pianoSound.mp3; path = "../../../Downloads/sample music/pianoSound.mp3"; sourceTree = "<group>"; };
 		4CBCBF6F26B2D6EF008AE9E4 /* Test1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Test1.mp3; sourceTree = "<group>"; };
 		F1DF072326B0672300836BA9 /* MuzyNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuzyNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DF072626B0672300836BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				4CBCBF6F26B2D6EF008AE9E4 /* Test1.mp3 */,
+				4C68BB3726BE786D00A54C6D /* pianoSound.mp3 */,
+				4C68BB3626BE786D00A54C6D /* suaraWakan.mp3 */,
 				F3BECB7626BD1006009A30B2 /* Resources */,
 				F1DF073E26B0674400836BA9 /* View */,
 				F1DF073D26B0673000836BA9 /* Controller */,
@@ -255,8 +261,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C68BB3926BE786D00A54C6D /* pianoSound.mp3 in Resources */,
 				4CBCBF7026B2D6EF008AE9E4 /* Test1.mp3 in Resources */,
 				F34CDFAB26B829BB008B056A /* ifTappedButton.xib in Resources */,
+				4C68BB3826BE786D00A54C6D /* suaraWakan.mp3 in Resources */,
 				F1DF073626B0672400836BA9 /* LaunchScreen.storyboard in Resources */,
 				F1DF073326B0672400836BA9 /* Assets.xcassets in Resources */,
 				F1DF074126B074A100836BA9 /* RecordingListScreen.storyboard in Resources */,

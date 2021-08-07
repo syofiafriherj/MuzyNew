@@ -23,9 +23,6 @@ class RecordingListScreenViewController: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
     var micSystem:MicState = .stop
-    
-    
-   
     @IBOutlet weak var navbarView: UIImageView!
     @IBOutlet weak var handleViewer: UIView!
     @IBOutlet weak var recordButton: UIButton!
@@ -37,11 +34,9 @@ class RecordingListScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-      
         setupTable()
         setupUITable()
+        
         recordingListScreenTableView.dataSource = self
         recordingListScreenTableView.delegate = self
         recordingListScreenTableView.estimatedRowHeight = 120
@@ -69,30 +64,19 @@ class RecordingListScreenViewController: UIViewController {
             micSystem = .start
           
             let largeConfig = UIImage.SymbolConfiguration(scale: .large)
-//            let image = UIImage(systemName: "stop.fill", withConfiguration: largeConfig)
-//            recordButton.setImage(image, for: .normal)
-            
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-                  self.handleViewer.alpha = 1
-                  self.handleViewer.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.bounds.width, height: -300)
-                  self.handleViewer.layoutIfNeeded()
-            }, completion: nil)
+                      self.handleViewer.alpha = 1
+                      self.handleViewer.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.bounds.width, height: -300)
+                      self.handleViewer.layoutIfNeeded()
+                }, completion: nil)
         }
-        }
+    }
         
-       
-   
     
     func setupUITable() {
         recordButton.layer.cornerRadius = recordButton.bounds.size.width / 2
-//        recordButton.layer.backgroundColor = UIColor(named: "PlayPauseButtonColor")
-//
-////        handleViewer.backgroundColor = .white
-//        handleViewer.layer.backgroundColor = UIColor(named: "CardColor")
         handleViewer.layer.cornerRadius = 26
-        
         recordingListScreenTableView.contentInset = UIEdgeInsets(top: 20,left: 0,bottom: 20,right: 0)
-        
         self.recordingListScreenTableView.rowHeight = 92
 
     }
@@ -118,7 +102,6 @@ class RecordingListScreenViewController: UIViewController {
         recordingListScreenTableView.register(nib2, forCellReuseIdentifier: "custom2")
         
     }
-
 }
 
 extension RecordingListScreenViewController : UITableViewDataSource{
@@ -126,6 +109,13 @@ extension RecordingListScreenViewController : UITableViewDataSource{
         dummyData.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "AudioViewer", bundle: nil)
+        let vc = UIStoryboard(name:"AudioViewer", bundle: nil).instantiateViewController(identifier: "AudioViewerViewController") as! AudioViewerViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == indexPlaying{
             //cell playing
@@ -148,7 +138,7 @@ extension RecordingListScreenViewController : UITableViewDataSource{
             
             return cell
             
-        }else{
+        } else {
             if indexPlaying == -1 {
             audioPlayer.stop() }
             print(indexPlaying)
@@ -167,6 +157,8 @@ extension RecordingListScreenViewController : UITableViewDataSource{
     }
     
 }
+
+
 
 
 extension RecordingListScreenViewController : UITableViewDelegate{

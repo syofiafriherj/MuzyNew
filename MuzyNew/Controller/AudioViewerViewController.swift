@@ -20,11 +20,15 @@ class AudioViewerViewController: UIViewController {
     @IBOutlet weak var sliderBar: UISlider!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var playButton: UIButton!
-   
     @IBOutlet var viewScoreNotes: UIView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     
-    
+
+    @IBAction func backButton(_ sender: Any) {
+        let _ = self.navigationController?.popViewController(animated: true)
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
     
 //Function tombol play and pause
     @IBAction func whenTapped(_ sender: UIButton) {
@@ -41,21 +45,38 @@ class AudioViewerViewController: UIViewController {
             let largeConfig = UIImage.SymbolConfiguration(scale: .large)
             let image = UIImage(systemName: "pause.fill", withConfiguration: largeConfig)?.withRenderingMode(.automatic)
             playButton.setImage(image, for: .normal)
-            let sound = Bundle.main.path(forResource: "Test1", ofType: "mp3")
-           
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
-                
-            }
-            catch {
-                print(error)
-            }
             
-            setupPlayer()
-            sliderBar.maximumValue = Float(audioPlayer.duration)
-            audioPlayer.play()
+            if segmentedControl.selectedSegmentIndex == 0 {
+                let sound = Bundle.main.path(forResource: "suaraWakan", ofType: "mp3")
+               
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+                    
+                }
+                catch {
+                    print(error)
+                }
+                
+                setupPlayer()
+                sliderBar.maximumValue = Float(audioPlayer.duration)
+                audioPlayer.play()
+                
+            } else if segmentedControl.selectedSegmentIndex == 1 {
+                let sound = Bundle.main.path(forResource: "pianoSound", ofType: "mp3")
+               
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+                    
+                }
+                catch {
+                    print(error)
+                }
+                
+                setupPlayer()
+                sliderBar.maximumValue = Float(audioPlayer.duration)
+                audioPlayer.play()
+            }
         }
-        
     }
     
     @IBOutlet var scoreNotesView: UIImageView!
@@ -65,6 +86,7 @@ class AudioViewerViewController: UIViewController {
         loadingPage()
         whenPlayButton()
         saveMenu()
+        
         
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "PlayPauseColorButton")], for: .normal)
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "PrimaryColor")], for: .selected)
@@ -76,15 +98,12 @@ class AudioViewerViewController: UIViewController {
             var image : UIImage = UIImage(named: "scoreNotesWhite")!
             scoreNotesView.image = image
         }
-        
-        
-        
         self.navigationController?.navigationBar.titleTextAttributes =
                     [NSAttributedString.Key.font: UIFont(name: "New York Extra Large", size: 18),
                      NSAttributedString.Key.foregroundColor: UIColor(named: "PlayPauseColorButton")]
-        
     }
     
+  
     
     func saveMenu(){
         print("push")
@@ -96,15 +115,9 @@ class AudioViewerViewController: UIViewController {
         
         //2. Bikin Barbutton
         let addButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.down"), menu :saveMenu)
-//        navigationController?.navigationBar.tintColor = .black
- 
         navigationItem.setRightBarButton(addButton, animated: true)
         navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "PlayPauseColorButton")
-      
-        /*
-            navigationItem.setRightBarButton(addButton, animated: true)
-            navigationItem.rightBarButtonItem?.tintColor = UIColor(displayP3Red: 0.961, green: 0.957, blue: 0.937, alpha: 1)
-        */
+
     }
  
     
@@ -162,9 +175,6 @@ class AudioViewerViewController: UIViewController {
     
 //tampilan awal
     private func loadingPage(){
-//        playButton.backgroundColor = .white
-//        cardView.backgroundColor = .white
-//        cardView.layer.backgroundColor = UIColor(red: 0.192, green: 0.263, blue: 0.318, alpha: 0.9).cgColor
         cardView.layer.cornerRadius = 26
     }
 
@@ -175,9 +185,6 @@ class AudioViewerViewController: UIViewController {
      
     }
     
-  
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
     
 //function segmented ketika di klik
     @IBAction func didSelected(_ sender: UISegmentedControl) {
@@ -186,10 +193,9 @@ class AudioViewerViewController: UIViewController {
             
         } else if sender.selectedSegmentIndex == 1 {
             segmentedIndex = 1
-            
-            
         }
-        
     }
-    
 }
+
+
+
