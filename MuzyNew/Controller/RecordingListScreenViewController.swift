@@ -125,7 +125,7 @@ extension RecordingListScreenViewController : UITableViewDataSource{
                 self.recordingListScreenTableView.reloadData()
             }
             
-            let sound = Bundle.main.path(forResource: "Test1", ofType: "mp3")
+            let sound = Bundle.main.path(forResource: "suaraWakan", ofType: "mp3")
             
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))

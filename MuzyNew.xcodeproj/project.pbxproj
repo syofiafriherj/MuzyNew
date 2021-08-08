@@ -29,8 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4C68BB3626BE786D00A54C6D /* suaraWakan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = suaraWakan.mp3; path = "../../../Downloads/sample music/suaraWakan.mp3"; sourceTree = "<group>"; };
-		4C68BB3726BE786D00A54C6D /* pianoSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pianoSound.mp3; path = "../../../Downloads/sample music/pianoSound.mp3"; sourceTree = "<group>"; };
+		4C68BB3626BE786D00A54C6D /* suaraWakan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = suaraWakan.mp3; path = ../../../../Downloads/suaraWakan.mp3; sourceTree = "<group>"; };
+		4C68BB3726BE786D00A54C6D /* pianoSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pianoSound.mp3; path = ../../../../Downloads/pianoSound.mp3; sourceTree = "<group>"; };
 		4CBCBF6F26B2D6EF008AE9E4 /* Test1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Test1.mp3; sourceTree = "<group>"; };
 		F1DF072326B0672300836BA9 /* MuzyNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuzyNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DF072626B0672300836BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -437,7 +437,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6W562GH9DQ;
+				DEVELOPMENT_TEAM = 56PAMU5KFA;
 				INFOPLIST_FILE = "$(SRCROOT)/MuzyNew/Others/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -446,7 +446,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = parkJK.MuzyNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -456,7 +456,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6W562GH9DQ;
+				DEVELOPMENT_TEAM = 56PAMU5KFA;
 				INFOPLIST_FILE = "$(SRCROOT)/MuzyNew/Others/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -465,7 +465,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = parkJK.MuzyNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
