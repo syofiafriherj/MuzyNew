@@ -75,12 +75,15 @@ class AudioViewerViewController: UIViewController {
                 setupPlayer()
                 sliderBar.maximumValue = Float(audioPlayer.duration)
                 audioPlayer.play()
+                }
             }
-        }
     }
+    
+    
     
     @IBOutlet var scoreNotesView: UIImageView!
     @IBOutlet var navbarTitle: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingPage()
@@ -104,22 +107,26 @@ class AudioViewerViewController: UIViewController {
     }
     
   
-    
     func saveMenu(){
-        print("push")
-        //1. Bikin UIMenu
-        let saveMenu = UIMenu(title: "", children: [UIAction(title: "Save MIDI as .mp3", image: UIImage(systemName: "doc")) { action in },
-                                                    UIAction(title: "Save MIDI as .wav", image: UIImage(systemName: "doc")) { action in },
-                                                    UIAction(title: "Save Score Notes as .pdf", image: UIImage(systemName: "doc")) { action in },
-                                                    ])
-        
-        //2. Bikin Barbutton
-        let addButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.down"), menu :saveMenu)
-        navigationItem.setRightBarButton(addButton, animated: true)
-        navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "PlayPauseColorButton")
+            print("push")
+            //1. Bikin UIMenu
+            let alert = UIAlertController(title: "Successful", message: "MIDI has been saved to file", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Open in Files App", style: ., handler: nil))
+            
+            let saveMenu = UIMenu(title: "", children: [UIAction(title: "Save MIDI as .mp3", image: UIImage(systemName: "doc")){action in self.present(alert, animated: true, completion: nil) },
+                                                        UIAction(title: "Save MIDI as .wav", image: UIImage(systemName: "doc")) { action in self.present(alert, animated: true, completion: nil) },
+                                                        UIAction(title: "Save Score Notes as .pdf", image: UIImage(systemName: "doc")) { action in self.present(alert, animated: true, completion: nil) },
+                                                        ]
+            )
+            
+            //2. Bikin Barbutton
+            let addButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.down"), menu :saveMenu)
+            navigationItem.setRightBarButton(addButton, animated: true)
+            navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "MenuColor")
 
-    }
- 
+        }
     
     private var timer:Timer?
     
