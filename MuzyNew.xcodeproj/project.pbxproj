@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C5F792A26BFDD0100129F4F /* pianoSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C5F792926BFDD0100129F4F /* pianoSound.mp3 */; };
+		4C5F793126BFDE6200129F4F /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5F792C26BFDDFD00129F4F /* AVFAudio.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		4C68BB3826BE786D00A54C6D /* suaraWakan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C68BB3626BE786D00A54C6D /* suaraWakan.mp3 */; };
-		4C68BB3926BE786D00A54C6D /* pianoSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C68BB3726BE786D00A54C6D /* pianoSound.mp3 */; };
 		4CBCBF7026B2D6EF008AE9E4 /* Test1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4CBCBF6F26B2D6EF008AE9E4 /* Test1.mp3 */; };
 		F1DF072726B0672300836BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF072626B0672300836BA9 /* AppDelegate.swift */; };
 		F1DF072926B0672300836BA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF072826B0672300836BA9 /* SceneDelegate.swift */; };
@@ -29,8 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4C68BB3626BE786D00A54C6D /* suaraWakan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = suaraWakan.mp3; path = ../../../../Downloads/suaraWakan.mp3; sourceTree = "<group>"; };
-		4C68BB3726BE786D00A54C6D /* pianoSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pianoSound.mp3; path = ../../../../Downloads/pianoSound.mp3; sourceTree = "<group>"; };
+		4C5F792926BFDD0100129F4F /* pianoSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pianoSound.mp3; sourceTree = "<group>"; };
+		4C5F792C26BFDDFD00129F4F /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
+		4C68BB3626BE786D00A54C6D /* suaraWakan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = suaraWakan.mp3; sourceTree = "<group>"; };
 		4CBCBF6F26B2D6EF008AE9E4 /* Test1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Test1.mp3; sourceTree = "<group>"; };
 		F1DF072326B0672300836BA9 /* MuzyNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuzyNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DF072626B0672300836BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,17 +88,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5F793126BFDE6200129F4F /* AVFAudio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C5F792B26BFDDFD00129F4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C5F792C26BFDDFD00129F4F /* AVFAudio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F1DF071A26B0672300836BA9 = {
 			isa = PBXGroup;
 			children = (
 				F1DF072526B0672300836BA9 /* MuzyNew */,
 				F1DF072426B0672300836BA9 /* Products */,
+				4C5F792B26BFDDFD00129F4F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,8 +123,8 @@
 		F1DF072526B0672300836BA9 /* MuzyNew */ = {
 			isa = PBXGroup;
 			children = (
+				4C5F792926BFDD0100129F4F /* pianoSound.mp3 */,
 				4CBCBF6F26B2D6EF008AE9E4 /* Test1.mp3 */,
-				4C68BB3726BE786D00A54C6D /* pianoSound.mp3 */,
 				4C68BB3626BE786D00A54C6D /* suaraWakan.mp3 */,
 				F3BECB7626BD1006009A30B2 /* Resources */,
 				F1DF073E26B0674400836BA9 /* View */,
@@ -261,7 +273,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C68BB3926BE786D00A54C6D /* pianoSound.mp3 in Resources */,
 				4CBCBF7026B2D6EF008AE9E4 /* Test1.mp3 in Resources */,
 				F34CDFAB26B829BB008B056A /* ifTappedButton.xib in Resources */,
 				4C68BB3826BE786D00A54C6D /* suaraWakan.mp3 in Resources */,
@@ -269,6 +280,7 @@
 				F1DF073326B0672400836BA9 /* Assets.xcassets in Resources */,
 				F1DF074126B074A100836BA9 /* RecordingListScreen.storyboard in Resources */,
 				F34CDFAF26B82A4F008B056A /* defaultRecordingListScreen.xib in Resources */,
+				4C5F792A26BFDD0100129F4F /* pianoSound.mp3 in Resources */,
 				F1DF072E26B0672300836BA9 /* Main.storyboard in Resources */,
 				F3BECB8326BD10C6009A30B2 /* NewYorkExtraLarge-Bold.otf in Resources */,
 				F1DF074326B074B700836BA9 /* AudioViewer.storyboard in Resources */,
@@ -437,7 +449,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 56PAMU5KFA;
+				DEVELOPMENT_TEAM = 6W562GH9DQ;
 				INFOPLIST_FILE = "$(SRCROOT)/MuzyNew/Others/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -456,7 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 56PAMU5KFA;
+				DEVELOPMENT_TEAM = 6W562GH9DQ;
 				INFOPLIST_FILE = "$(SRCROOT)/MuzyNew/Others/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
