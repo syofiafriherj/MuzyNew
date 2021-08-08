@@ -51,7 +51,11 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="PrimaryColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Inspiration" id="SQJ-KJ-6pa"/>
+                    <navigationItem key="navigationItem" title="My Inspiration" id="SQJ-KJ-6pa">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="x6t-Qi-ozL">
+                            <color key="tintColor" name="PlayPauseColorButton"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="handleViewer" destination="8vS-Vb-uJf" id="RNx-Co-0IK"/>
                         <outlet property="recordButton" destination="Fkp-IR-Bab" id="lNC-2s-3xf"/>
