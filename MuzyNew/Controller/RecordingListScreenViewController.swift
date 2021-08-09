@@ -125,6 +125,21 @@ extension RecordingListScreenViewController : UITableViewDataSource{
                     [NSAttributedString.Key.font: UIFont(name: "New York Extra Large", size: 36),
                     NSAttributedString.Key.foregroundColor: UIColor(named: "PlayPauseColorButton")]
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            dummyData.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+        
+        }
+    
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == indexPlaying{

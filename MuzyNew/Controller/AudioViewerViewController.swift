@@ -112,6 +112,7 @@ class AudioViewerViewController: UIViewController {
             //1. Bikin UIMenu
             let alert = UIAlertController(title: "Successful", message: "MIDI has been saved to file", preferredStyle: .alert)
             
+            alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor(named: "PrimaryColor")
             alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
 //            alert.addAction(UIAlertAction(title: "Open in Files App", style: ., handler: nil))
             
@@ -120,11 +121,11 @@ class AudioViewerViewController: UIViewController {
                                                         UIAction(title: "Save Score Notes as .pdf", image: UIImage(systemName: "doc")) { action in self.present(alert, animated: true, completion: nil) },
                                                         ]
             )
-            
+                              // << here !!
             //2. Bikin Barbutton
             let addButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.down"), menu :saveMenu)
             navigationItem.setRightBarButton(addButton, animated: true)
-            navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "MenuColor")
+            navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "PlayPauseColorButton")
 
         }
     
