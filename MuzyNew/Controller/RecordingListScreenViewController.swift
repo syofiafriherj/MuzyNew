@@ -44,6 +44,9 @@ class RecordingListScreenViewController: UIViewController {
         recordingListScreenTableView.rowHeight = UITableView.automaticDimension
         
         
+        self.navigationController?.navigationBar.largeTitleTextAttributes =
+                [NSAttributedString.Key.font: UIFont(name: "New York Extra Large", size: 36),
+                NSAttributedString.Key.foregroundColor: UIColor(named: "PlayPauseColorButton")]
         
     }
     
@@ -158,46 +161,53 @@ extension RecordingListScreenViewController : UITableViewDataSource{
     func tableView (_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        //Cara Delete
-        let delete = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandler) in
-            print("Delete: \(indexPath.row + 1)")
-            completionHandler(true)
-        }
-        
-        delete.image = UIImage(systemName: "trash")?.withTintColor(UIColor(named: "DeleteAction") ?? .red, renderingMode: .alwaysOriginal)
-        delete.backgroundColor = UIColor(named: "SwipeActionDelete")
-        
-        //Cara Rename
-        let rename = UIContextualAction(style: .normal, title: "Rename") { (action, view, completionHandler) in
-            print("Rename: \(indexPath.row + 1)")
-            completionHandler(true)
-        }
-        
-        rename.image = UIImage (systemName: "pencil")?.withTintColor(UIColor(named: "PlayPauseColorButton") ?? .darkGray, renderingMode: .alwaysOriginal)
-        rename.backgroundColor = UIColor(named: "SwipeActionRename")
-        
-        //swipe actions
-        let swipe = UISwipeActionsConfiguration(actions: [delete, rename])
-        return swipe
-    }
-    
-    //Delete Function Cell
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-//        return .delete
-//    }
 //
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            tableView.beginUpdates()
-//            dummyData.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//            tableView.endUpdates()
-        
+//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//
+//        //Cara Delete
+//        let delete = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandler) in
+//            print("Delete: \(indexPath.row + 1)")
+//            completionHandler(true)
 //        }
+//
+//        delete.image = UIImage(systemName: "trash")?.withTintColor(UIColor(named: "DeleteAction") ?? .red, renderingMode: .alwaysOriginal)
+//        delete.backgroundColor = UIColor(named: "SwipeActionDelete")
+//
+//        //Cara Rename
+//        let rename = UIContextualAction(style: .normal, title: "Rename") { (action, view, completionHandler) in
+//            print("Rename: \(indexPath.row + 1)")
+//            completionHandler(true)
+//        }
+//
+//        rename.image = UIImage (systemName: "pencil")?.withTintColor(UIColor(named: "PlayPauseColorButton") ?? .darkGray, renderingMode: .alwaysOriginal)
+//        rename.backgroundColor = UIColor(named: "SwipeActionRename")
+//
+//        //swipe actions
+//        let swipe = UISwipeActionsConfiguration(actions: [delete, rename])
+//        return swipe
 //    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    //        tableView.beginUpdates()
+    //        dummyData.remove(at: indexPath.row)
+    //        tableView.deleteRows(at: [indexPath], with: .fade)
+            if editingStyle == .delete {
+                tableView.beginUpdates()
+
+                let alertView = UIAlertController(title: "Are you sure want to permanently delete this recording?", message: "This action cannot be undo", preferredStyle: .actionSheet)
+                let delete = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+                    self.dummyData.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                    tableView.endUpdates()
+                }
+                let cancel = UIAlertAction(title: "Cancel", style: .default) { (action) in
+                }
+                    alertView.addAction(delete)
+                    alertView.addAction(cancel)
+                    
+                present(alertView, animated: true, completion: nil)
+                
+            }
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == indexPlaying{
