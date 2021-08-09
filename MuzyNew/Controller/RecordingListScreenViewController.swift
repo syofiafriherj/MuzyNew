@@ -32,6 +32,7 @@ class RecordingListScreenViewController: UIViewController {
     var indexPlaying = -1
     
     
+    @IBOutlet var navbarTitle: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTable()
@@ -50,7 +51,10 @@ class RecordingListScreenViewController: UIViewController {
             micSystem = .stop
           
             let largeConfig = UIImage.SymbolConfiguration(scale: .large)
-           
+            
+            let image = UIImage(systemName: "mic.fill", withConfiguration: largeConfig)?.withRenderingMode(.automatic)
+                recordButton.setImage(image, for: .normal)
+            
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                   self.handleViewer.alpha = 1
                   self.handleViewer.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.bounds.width, height: -162)
@@ -69,6 +73,9 @@ class RecordingListScreenViewController: UIViewController {
                       self.handleViewer.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.bounds.width, height: -300)
                       self.handleViewer.layoutIfNeeded()
                 }, completion: nil)
+    
+            let image = UIImage(systemName: "square.fill", withConfiguration: largeConfig)?.withRenderingMode(.automatic)
+            recordButton.setImage(image, for: .normal)
         }
     }
         
@@ -114,6 +121,9 @@ extension RecordingListScreenViewController : UITableViewDataSource{
         let vc = UIStoryboard(name:"AudioViewer", bundle: nil).instantiateViewController(identifier: "AudioViewerViewController") as! AudioViewerViewController
         self.navigationController?.pushViewController(vc, animated: true)
         self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.titleTextAttributes =
+                    [NSAttributedString.Key.font: UIFont(name: "New York Extra Large", size: 36),
+                    NSAttributedString.Key.foregroundColor: UIColor(named: "PlayPauseColorButton")]
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

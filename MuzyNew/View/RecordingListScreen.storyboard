@@ -54,6 +54,7 @@
                     <navigationItem key="navigationItem" title="My Inspiration" id="SQJ-KJ-6pa"/>
                     <connections>
                         <outlet property="handleViewer" destination="8vS-Vb-uJf" id="RNx-Co-0IK"/>
+                        <outlet property="navbarTitle" destination="SQJ-KJ-6pa" id="Yrs-9I-MT9"/>
                         <outlet property="recordButton" destination="Fkp-IR-Bab" id="lNC-2s-3xf"/>
                         <outlet property="recordingListScreenTableView" destination="2fs-WX-aJ6" id="3f5-D5-isP"/>
                     </connections>
@@ -71,12 +72,6 @@
                         <rect key="frame" x="0.0" y="44" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="PrimaryColor"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" name="PrimaryColor"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" name="PlayPauseColorButton"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

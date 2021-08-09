@@ -101,9 +101,9 @@ class AudioViewerViewController: UIViewController {
             var image : UIImage = UIImage(named: "scoreNotesWhite")!
             scoreNotesView.image = image
         }
-        self.navigationController?.navigationBar.titleTextAttributes =
-                    [NSAttributedString.Key.font: UIFont(name: "New York Extra Large", size: 18),
-                     NSAttributedString.Key.foregroundColor: UIColor(named: "PlayPauseColorButton")]
+            self.navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.font: UIFont(name: "New York Extra Large", size: 18),
+            NSAttributedString.Key.foregroundColor: UIColor(named: "PlayPauseColorButton")]
     }
     
   
@@ -113,7 +113,7 @@ class AudioViewerViewController: UIViewController {
             let alert = UIAlertController(title: "Successful", message: "MIDI has been saved to file", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Open in Files App", style: ., handler: nil))
+//            alert.addAction(UIAlertAction(title: "Open in Files App", style: ., handler: nil))
             
             let saveMenu = UIMenu(title: "", children: [UIAction(title: "Save MIDI as .mp3", image: UIImage(systemName: "doc")){action in self.present(alert, animated: true, completion: nil) },
                                                         UIAction(title: "Save MIDI as .wav", image: UIImage(systemName: "doc")) { action in self.present(alert, animated: true, completion: nil) },
