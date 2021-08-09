@@ -12,6 +12,7 @@ struct RecordingModel{
     var title : String = ""
     var duration : Int = 0
     var audio : Data = Data()
+    var isSelected: Bool
 }
 
 enum MicState {
@@ -27,20 +28,36 @@ class RecordingListScreenViewController: UIViewController {
     @IBOutlet weak var handleViewer: UIView!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet var recordingListScreenTableView: UITableView!
+    @IBOutlet var editButton: UIBarButtonItem!
     
     var dummyData = [RecordingModel]()
     var indexPlaying = -1
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTable()
         setupUITable()
-        
+        recordingListScreenTableView.allowsMultipleSelectionDuringEditing = true
         recordingListScreenTableView.dataSource = self
         recordingListScreenTableView.delegate = self
         recordingListScreenTableView.estimatedRowHeight = 120
         recordingListScreenTableView.rowHeight = UITableView.automaticDimension
+        
+        
+        
+    }
+    
+    
+    @IBAction func didTappedEdit(_ sender: Any) {
+        if recordingListScreenTableView.isEditing{
+            recordingListScreenTableView.setEditing(false, animated: true)
+            editButton.title = "Edit"
+        }else{
+            recordingListScreenTableView.setEditing(true, animated: true)
+            editButton.title = "Done"
+        }
+        
+//        debugPrint(dummyData.filter({ $0.isSelected == true}))
         
     }
     
@@ -89,7 +106,7 @@ class RecordingListScreenViewController: UIViewController {
 //            RecordingModel(title: "Coba3", duration: 4, audio: Data()),
 //            RecordingModel(title: "Coba4", duration: 3, audio: Data()),
 //        ]
-        var data =  RecordingModel(title: "Coba1", duration: 10, audio: Data())
+        var data =  RecordingModel(title: "Coba1", duration: 10, audio: Data(), isSelected: false)
         dummyData.append(data)
         recordingListScreenTableView.reloadData()
         
@@ -110,26 +127,77 @@ extension RecordingListScreenViewController : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if dummyData[indexPath.row].isSelected{
+            return
+        }
+        dummyData[indexPath.row].isSelected.toggle()
+        print("DidSelect method is called")
+        
         let storyboard: UIStoryboard = UIStoryboard(name: "AudioViewer", bundle: nil)
         let vc = UIStoryboard(name:"AudioViewer", bundle: nil).instantiateViewController(identifier: "AudioViewerViewController") as! AudioViewerViewController
         self.navigationController?.pushViewController(vc, animated: true)
         self.navigationController?.navigationBar.prefersLargeTitles = false
     }
-    
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            tableView.beginUpdates()
-            dummyData.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            tableView.endUpdates()
-        
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        //tableView.isEditing = true
+        if tableView.isEditing{
+            
+            
+        }else{
+            
+            
         }
-    
+        
+        if !dummyData[indexPath.row].isSelected{
+            return
+        }
+        dummyData[indexPath.row].isSelected.toggle()
+        print("DidDeselect method is called")
     }
+    func tableView (_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        //Cara Delete
+        let delete = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandler) in
+            print("Delete: \(indexPath.row + 1)")
+            completionHandler(true)
+        }
+        
+        delete.image = UIImage(systemName: "trash")?.withTintColor(UIColor(named: "DeleteAction") ?? .red, renderingMode: .alwaysOriginal)
+        delete.backgroundColor = UIColor(named: "SwipeActionDelete")
+        
+        //Cara Rename
+        let rename = UIContextualAction(style: .normal, title: "Rename") { (action, view, completionHandler) in
+            print("Rename: \(indexPath.row + 1)")
+            completionHandler(true)
+        }
+        
+        rename.image = UIImage (systemName: "pencil")?.withTintColor(UIColor(named: "PlayPauseColorButton") ?? .darkGray, renderingMode: .alwaysOriginal)
+        rename.backgroundColor = UIColor(named: "SwipeActionRename")
+        
+        //swipe actions
+        let swipe = UISwipeActionsConfiguration(actions: [delete, rename])
+        return swipe
+    }
+    
+    //Delete Function Cell
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        return .delete
+//    }
+//
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            tableView.beginUpdates()
+//            dummyData.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//            tableView.endUpdates()
+        
+//        }
+//    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == indexPlaying{
@@ -184,8 +252,18 @@ extension RecordingListScreenViewController : UITableViewDelegate{
         }else{
             // tinggi cell default
             return UITableView.automaticDimension
+            }
         }
+    func tableView(_ tableView: UITableView, shouldBeginMultipleSelectionInteractionAt indexPath: IndexPath) -> Bool {
+        true
+    }
+    func tableView(_ tableView: UITableView, didBeginMultipleSelectionInteractionAt indexPath: IndexPath) {
+        recordingListScreenTableView.setEditing(true, animated: true)
+    }
+    func tableViewDidEndMultipleSelectionInteraction(_ tableView: UITableView) {
+        print("\(#function)")
     }
 }
+
 
 

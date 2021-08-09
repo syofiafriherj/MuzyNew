@@ -54,9 +54,13 @@
                     <navigationItem key="navigationItem" title="My Inspiration" id="SQJ-KJ-6pa">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="x6t-Qi-ozL">
                             <color key="tintColor" name="PlayPauseColorButton"/>
+                            <connections>
+                                <action selector="didTappedEdit:" destination="Y6W-OH-hqX" id="e0F-rX-b6C"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="x6t-Qi-ozL" id="w6j-Wr-ttN"/>
                         <outlet property="handleViewer" destination="8vS-Vb-uJf" id="RNx-Co-0IK"/>
                         <outlet property="recordButton" destination="Fkp-IR-Bab" id="lNC-2s-3xf"/>
                         <outlet property="recordingListScreenTableView" destination="2fs-WX-aJ6" id="3f5-D5-isP"/>
